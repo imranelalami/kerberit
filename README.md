@@ -19,7 +19,7 @@
 - **Smart Filtering**: Highlights readable files and shows permissions
 - **Environment Detection**: Checks AD join status and Kerberos configuration
 
-## 📋 Prerequisites
+## Prerequisites
 
 ### Required Tools
 - `kinit` - Kerberos authentication
@@ -31,7 +31,7 @@
 - `keytabextract.py` - Extract hashes from keytabs ([KeyTabExtract](https://github.com/sosdave/KeyTabExtract))
 - `linikatz.sh` - Linux memory credential extraction ([Linikatz](https://github.com/CiscoCXSecurity/linikatz))
 
-## 🚀 Installation
+## Installation
 
 ```bash
 # Clone the repository
@@ -45,7 +45,7 @@ chmod +x kerberit.sh
 ./kerberit.sh
 ```
 
-## 🎮 Usage
+## Usage
 
 ### Basic Usage
 ```bash
@@ -59,7 +59,7 @@ sudo ./kerberit.sh
 
 > **Note**: Running with root privileges enables Linikatz functionality for memory-based credential extraction.
 
-## 🔍 Attack Scenarios
+## Attack Scenarios
 
 ### 1. Keytab File Exploitation
 When keytab files are discovered:

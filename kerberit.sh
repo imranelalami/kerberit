@@ -372,7 +372,7 @@ echo "Strategy:
 1)if root we use linikatz
 2)if not we try to find keytabs, if they are found we Pass-the-key
 3)or we can Extract NTLM from keytabs
-4)If we find a ccache file we import it to KRB5CCNAME var (if multiple ccache files are found choose the one that belong to the highest user pvi)"
+4)If we find a ccache file we import it to KRB5CCNAME var (if multiple ccache files are found choose the one that belong to the highest user pviv)"
 echo
 
 if [ "$EUID" -eq 0 ]; then
